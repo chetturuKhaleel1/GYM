@@ -28,8 +28,20 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // ✅ CORS config
+const whitelist = [
+  'http://localhost:5173',                  // Local dev
+  'https://gym-ivory-kappa.vercel.app',    // Vercel frontend
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173', // frontend Vite dev URL
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like Postman or server-to-server requests)
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error(`Not allowed by CORS: ${origin}`));
+    }
+  },
   credentials: true,
 }));
 
