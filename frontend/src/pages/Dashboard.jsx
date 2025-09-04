@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBell } from "react-icons/fa/index.esm.js";
+import { FaBell } from "react-icons/fa";
 
 import { toast } from 'react-toastify';
 import MemberBills from './member/MemberBills';
