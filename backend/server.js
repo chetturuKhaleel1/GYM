@@ -30,7 +30,7 @@ connectDB();
 const whitelist = [
   'http://localhost:5173',                  // Local dev
   'https://gym-ivory-kappa.vercel.app',    // Old Vercel frontend
-  'https://gym-6h9gsm6bz-chetturu-khaleels-projects.vercel.app', // New Vercel frontend
+'https://gym-tawun80v6-chetturu-khaleels-projects.vercel.app', // new frontend
 ];
 
 app.use(cors({
