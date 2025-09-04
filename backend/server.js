@@ -26,11 +26,11 @@ const PORT = process.env.PORT || 5000;
 
 // ✅ Connect to MongoDB
 connectDB();
-
 // ✅ CORS config
 const whitelist = [
   'http://localhost:5173',                  // Local dev
-  'https://gym-ivory-kappa.vercel.app',    // Vercel frontend
+  'https://gym-ivory-kappa.vercel.app',    // Old Vercel frontend
+  'https://gym-6h9gsm6bz-chetturu-khaleels-projects.vercel.app', // New Vercel frontend
 ];
 
 app.use(cors({
