@@ -34,7 +34,7 @@ const getPlanTheme = (name = "") => {
         bg: "bg-[#1a1a1a] bg-opacity-80",
         text: "text-white",
         border: "border-gray-700",
-        icon: <FaGem className="text-white text-3xl mb-3" />,
+        icon: <span className="text-white text-3xl mb-3">💎</span>,
       };
   }
 };
