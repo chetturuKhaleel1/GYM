@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+// import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -27,23 +27,27 @@ const Footer = () => {
         </div>
 
         {/* Contact + Social */}
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Contact</h3>
-          <ul className="text-gray-400 text-base space-y-2">
-            <li className="flex justify-center sm:justify-start items-center gap-2">
-              <FaMapMarkerAlt className="text-yellow-400" /> Chandapura, Bangalore
-            </li>
-            <li className="flex justify-center sm:justify-start items-center gap-2">
-              <FaPhoneAlt className="text-yellow-400" /> +91 98765 43210
-            </li>
-          </ul>
+       <div>
+  <h3 className="text-xl font-semibold mb-3">Contact</h3>
+  <ul className="text-gray-400 text-base space-y-2">
+    {/* Location */}
+    <li className="flex justify-center sm:justify-start items-center gap-2">
+      📍 Chandapura, Bangalore
+    </li>
 
-          <div className="flex justify-center sm:justify-start gap-5 mt-5 text-2xl text-gray-400">
-            <a href="#" className="hover:text-white"><FaFacebookF /></a>
-            <a href="#" className="hover:text-white"><FaInstagram /></a>
-          </div>
-        </div>
-      </div>
+    {/* Phone */}
+    <li className="flex justify-center sm:justify-start items-center gap-2">
+      📞 +91 98765 43210
+    </li>
+  </ul>
+
+  {/* Social Links */}
+  <div className="flex justify-center sm:justify-start gap-5 mt-5 text-2xl text-gray-400">
+    <a href="#" className="hover:text-white">👍</a> {/* Facebook */}
+    <a href="#" className="hover:text-white">📸</a> {/* Instagram */}
+  </div>
+</div>
+ </div>
 
       {/* Bottom Line */}
       <div className="mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-4">
