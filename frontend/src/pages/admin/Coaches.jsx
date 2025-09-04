@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaSearch } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 
 export default function Coaches() {
@@ -130,7 +130,7 @@ await axios.put(`${BASE_URL}/api/coaches/${editingCoachId}`, editedCoach);
               onChange={(e) => setSearch(e.target.value)}
               className="bg-transparent text-black p-1 outline-none"
             />
-            <FaSearch className="text-[#1B1C57]" />
+            <span className="text-[#1B1C57]">🔍</span>
           </div>
         </div>
 
