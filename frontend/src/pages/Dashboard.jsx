@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBell } from "react-icons/fa";
+
 
 import { toast } from 'react-toastify';
 import MemberBills from './member/MemberBills';
@@ -227,7 +227,7 @@ console.log("🧠 Already Paid:", alreadyPaid);
 
           <div className="relative" ref={dropdownRef}>
             <button onClick={handleBellClick} className="relative">
-              <FaBell className="text-2xl text-gray-600" />
+             <span className="text-2xl text-gray-600">🔔</span> // or any placeholder
               {unreadCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                   {unreadCount}
