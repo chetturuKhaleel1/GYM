@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 const ManageTrainers = () => {
   const [trainers, setTrainers] = useState([]);
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:5000/api/admin/trainers', {
+        const res = await fetch(`${BASE_URL}/api/admin/trainers`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

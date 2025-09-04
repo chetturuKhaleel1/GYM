@@ -7,9 +7,10 @@ const AdminHome = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const token = localStorage.getItem("token");
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+ const token = localStorage.getItem("token");
 
-        const res = await fetch("http://localhost:5000/api/admin/stats", {
+const res = await fetch(`${BASE_URL}/api/admin/stats`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

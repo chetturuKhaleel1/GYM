@@ -7,6 +7,7 @@ const Payments = () => {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
 
   const fetchPayments = async () => {
@@ -19,7 +20,8 @@ const Payments = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/payments", {
+    const res = await fetch(`${BASE_URL}/api/payments`, {
+
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

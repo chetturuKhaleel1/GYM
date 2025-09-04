@@ -13,10 +13,11 @@ const ManageMembers = () => {
     email: '',
     password: '',
   });
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchMembers = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/members');
+    const response = await fetch(`${BASE_URL}/api/members`);
       const data = await response.json();
       setMembers(data);
     } catch (error) {
@@ -33,7 +34,7 @@ const handleAddMember = async (e) => {
   e.preventDefault();
   try {
    // ✅ Correct route (matches your backend)
-const res = await fetch('http://localhost:5000/api/users/add-member', {
+ const res = await fetch(`${BASE_URL}/api/users/add-member`, {
 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -70,9 +71,7 @@ const res = await fetch('http://localhost:5000/api/users/add-member', {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this member?')) return;
     try {
-      await fetch(`http://localhost:5000/api/members/${id}`, {
-        method: 'DELETE',
-      });
+    await fetch(`${BASE_URL}/api/members/${id}`, { method: 'DELETE' });
       setMembers(members.filter((member) => member._id !== id));
     } catch (error) {
       console.error('Failed to delete member:', error);
@@ -86,7 +85,7 @@ const res = await fetch('http://localhost:5000/api/users/add-member', {
 
   const handleSaveRole = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/members/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/members/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role: newRole }),

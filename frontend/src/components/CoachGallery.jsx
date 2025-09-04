@@ -23,7 +23,10 @@ const imageUrls = [
 export default function CoachGallery() {
   const [coaches, setCoaches] = useState([]);
 useEffect(() => {
-  fetch("http://localhost:5000/api/coaches")
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
+fetch(`${BASE_URL}/api/coaches`)
+
     .then((res) => res.json())
     .then((data) => {
       // Step 1: Shuffle expertise options

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaCrown, FaGem, FaStar } from "react-icons/fa";
 
-const API_BASE = "/api";
+const API_BASE = import.meta.env.VITE_BACKEND_URL;
+
 
 // 🌙 Theme based on membership plan name
 const getPlanTheme = (name = "") => {

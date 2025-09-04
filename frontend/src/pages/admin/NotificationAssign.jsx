@@ -6,15 +6,16 @@ const NotificationAssign = () => {
   const [description, setDescription] = useState("");
   const [selectedMember, setSelectedMember] = useState("");
   const [members, setMembers] = useState([]);
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const token = userInfo?.token;
 
   const fetchMembers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users/members", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+     const res = await fetch(`${BASE_URL}/api/users/members`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
 
       if (!res.ok) throw new Error("Failed to fetch members");
 
@@ -40,7 +41,8 @@ const NotificationAssign = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/notifications/assign-monthly", {
+const res = await fetch(`${BASE_URL}/api/notifications/assign-monthly`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
