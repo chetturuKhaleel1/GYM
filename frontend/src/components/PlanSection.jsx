@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaCrown, FaGem, FaStar } from "react-icons/fa";
+// import { FaCrown, FaGem, FaStar } from "react-icons/fa";
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL;
 
@@ -13,21 +13,21 @@ const getPlanTheme = (name = "") => {
         bg: "bg-[#2d2b1e] bg-opacity-80",
         text: "text-yellow-200",
         border: "border-yellow-400",
-        icon: <FaCrown className="text-yellow-300 text-3xl mb-3" />,
+        icon: <span className="text-yellow-300 text-3xl mb-3">👑</span>, // For Gold
       };
     case "platinum":
       return {
         bg: "bg-[#2a2d32] bg-opacity-80",
         text: "text-slate-200",
         border: "border-slate-400",
-        icon: <FaGem className="text-slate-300 text-3xl mb-3" />,
+    icon: <span className="text-slate-300 text-3xl mb-3">💎</span>,
       };
     case "silver":
       return {
         bg: "bg-[#2f2f2f] bg-opacity-80",
         text: "text-gray-200",
         border: "border-gray-400",
-        icon: <FaStar className="text-gray-300 text-3xl mb-3" />,
+      icon: <span className="text-gray-300 text-3xl mb-3">⭐</span>,
       };
     default:
       return {
