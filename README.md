@@ -30,16 +30,23 @@ This project simplifies membership handling, service management, and payment pro
 
 ---
 
-## 📷 Screenshots
-![Final Gym Screen](./frontend/src/assets/finalgymscreen.png)
+## 📷 Screenshot
+![Final Gym Screen](frontend/src/assets/finalgymscreen.png)
 
 ---
 
-## 📌 Project Status
-✅ Completed with full-stack functionality: frontend, backend, database, and payment gateway integration.  
-✨ Future updates may include:  
-- Supplement store and diet plans.  
-- Admin dashboard for advanced reports.  
-- More analytics on user payments and growth.  
+## ⚡ How to Clone and Run Locally
+```bash
+# Clone the repository
+git clone https://github.com/chetturuKhaleel1/GYM.git
+cd GYM
 
----
+# Frontend
+cd frontend
+npm install
+npm start
+
+# Backend
+cd ../backend
+npm install
+npm start
